@@ -63,6 +63,12 @@ if uploaded:
             status.update(label="📄 PDF generation completed", state="complete")
 
         st.download_button("Download PDF report", pdf_bytes, "dq_report.pdf", mime="application/pdf")
+        
+        # EMAIL / PHONE VALIDATION
+        if "contact" in checks:
+            st.write("### 📧 Email & Phone Validation")
+            st.dataframe(checks["contact"])
+
 
 else:
     st.info("Upload a dataset to get started.")
