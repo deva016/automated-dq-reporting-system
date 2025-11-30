@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+ydata-profiling
+scikit-learn
+rapidfuzz
+openpyxl
+pyarrow
+reportlab            # for PDF gen (or weasyprint)
+python-dateutil
+psycopg2-binary      # only if using Postgres later
+pytest
