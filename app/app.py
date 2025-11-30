@@ -1,3 +1,8 @@
+# --- FIX FOR STREAMLIT CLOUD IMPORTS ---
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+# ----------------------------------------
+
 import streamlit as st
 import pandas as pd
 from utils.io import read_file
@@ -47,5 +52,6 @@ if uploaded:
         pdf_buf = generate_pdf(profile, checks)
         pdf_bytes = pdf_buf.getvalue() if hasattr(pdf_buf, "getvalue") else pdf_buf.read()
         st.download_button("Download PDF report", pdf_bytes, "dq_report.pdf", mime="application/pdf")
+
 else:
     st.info("Upload a dataset to get started.")
