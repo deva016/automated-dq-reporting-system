@@ -12,3 +12,4 @@ def is_phone(x: str):
     if x is None:
         return False
     return re.match(PHONE_PATTERN, str(x)) is not None
+
